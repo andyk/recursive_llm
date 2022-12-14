@@ -1,4 +1,4 @@
-Recursion implemented using English as the programming language and GPT as the runtime.
+## Recursion implemented using English as the programming language and GPT as the runtime.
 
 To run:
 
