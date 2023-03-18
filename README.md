@@ -1,6 +1,6 @@
 # Recursive LLM prompts
 
-The idea is to implement recursion using English as the programming language and GPT as the runtime.
+The idea here is to implement recursion using English as the programming language and GPT as the runtime.
 
 Basically we come up with a GPT prompt which causes the model to return another slightly updated GPT prompt. 
 
@@ -32,7 +32,8 @@ while response_text.startswith("You are a recursive function"):
     response_text = openai.Completion.create(
         model="text-davinci-003",
         prompt=response_text,
-        …)
+        …)["choices"][0]["text"].strip()
+    print(response_text + "\n")
 ```
 
 
