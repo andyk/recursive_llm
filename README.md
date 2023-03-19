@@ -8,14 +8,7 @@ It’s kind of like traditional recursion in code, but instead of having a funct
 
 Here is an infinitely recursive fibonacci prompt:
 
-    You are a recursive function. Instead
-    of being written in a programming 
-    language, you are written in English.
-    You have variables FIB_INDEX = 2, 
-    MINUS_TWO = 0, MINUS_ONE = 1, 
-    CURR_VALUE = 1. Output this paragraph
-    but with updated variables to compute
-    the next step of the Fibbonaci sequence.
+> You are a recursive function. Instead of being written in a programming language, you are written in English.  You have variables FIB_INDEX = 2, MINUS_TWO = 0, MINUS_ONE = 1, CURR_VALUE = 1. Output this paragraph but with updated variables to compute the next step of the Fibbonaci sequence.
 
 To “run this program” we can paste it into OpenAI playground, and click run, and then take the result and run that, etc.
 
