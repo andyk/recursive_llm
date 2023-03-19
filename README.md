@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/andyk/recursive_gpt/main/shell_demo_recursive_
 
 In theory, because this does not specify a base case, we could stay in this loop of copying and pasting and running these successive prompts forever, each prompt representing one number in the Fibonacci sequence.
 
-In `run_recursive_gpt.py` we automate this recursion by writing a minimal loop in Python and using the OpenAI API to call the model with the prompt, check off the result satisfies the base case, and if not call the model with the result that was returned (which should be the updated prompt).
+In `run_recursive_gpt.py` we automate this recursion by writing a minimal loop in Python and using the OpenAI API to call the model with the prompt, check if the result satisfies the base case, and if not call the model with the result that was returned (which should be the updated prompt).
 
 Essentially:
 ```python
@@ -32,7 +32,8 @@ while response_text.startswith("You are a recursive function"):
     response_text = openai.Completion.create(
         model="text-davinci-003",
         prompt=response_text,
-        …)["choices"][0]["text"].strip()
+        …
+    )["choices"][0]["text"].strip()
     print(response_text + "\n")
 ```
 
