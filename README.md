@@ -12,7 +12,8 @@ Here is an infinitely recursive fibonacci prompt:
 
 To “run this program” we can paste it into OpenAI playground, and click run, and then take the result and run that, etc.
 
-https://raw.githubusercontent.com/andyk/recursive_gpt/main/shell_demo_recursive_no_base_case_2.mp4
+https://user-images.githubusercontent.com/228998/226147800-fff1ba10-118c-47ae-9772-35be5b15e4c0.mp4
+
 
 In theory, because this does not specify a base case, we could stay in this loop of copying and pasting and running these successive prompts forever, each prompt representing one number in the Fibonacci sequence.
 
@@ -30,6 +31,9 @@ while response_text.startswith("You are a recursive function"):
     print(response_text + "\n")
 ```
 
+And here's what it looks like when you run it:
+
+https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a957-a810c23516aa.mp4
 
 
 ## To run:
