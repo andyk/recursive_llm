@@ -1,6 +1,6 @@
 # Recursive LLM prompts
 
-The idea here is to implement recursion using English as the programming language and an LLM (e.g., GPT-3.5) as the runtime.
+The idea here is to implement recursion using English as the programming language and an LLM (e.g., GPT-2.5) as the runtime.
 
 Basically we come up with an LLM prompt which causes the model to return another slightly updated GPT prompt. More specifically, the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal (i.e., a base case).
 
@@ -43,7 +43,7 @@ https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a9
 
 The bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end-goal.
 
-This work is related to ReAct (a contraction of _**Re**_asoning + _**Act**_ion) \[[1](https://til.simonwillison.net/llms/python-react-pattern)\]\[[2](https://react-lm.github.io/)\], a "general paradigm" and associated implementation that "...explore[s] the use of LLMs to generate both reasoning traces and task-specific actions...".
+This work is related to ReAct (a contraction of **_Re_**asoning + **_Act_**ion) \[[1](https://til.simonwillison.net/llms/python-react-pattern)\]\[[2](https://react-lm.github.io/)\], a "general paradigm" and associated implementation that "...explore[s] the use of LLMs to generate both reasoning traces and task-specific actions...".
 
 Also, the idea of recursive prompts was explored in detail in _Optimality is the tiger, and agents are its teeth_\[[6](https://www.lesswrong.com/posts/kpPnReyBC54KESiSn/optimality-is-the-tiger-and-agents-are-its-teeth)\] (thanks to [mitthrowaway2](https://news.ycombinator.com/user?id=mitthrowaway2) on Hackernews for the pointer).
 
