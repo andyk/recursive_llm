@@ -17,18 +17,21 @@ https://user-images.githubusercontent.com/228998/226147800-fff1ba10-118c-47ae-97
 
 In theory, because this does not specify a base case, we could stay in this loop of copying and pasting and running these successive prompts forever, each prompt representing one number in the Fibonacci sequence.
 
-In `run_recursive_gpt.py` we automate this recursion by writing a recursive function in Python that repeatedly calls the OpenAI API with the original and then subsequently generatated prompts until the result satisfies the base case.
+In `run_recursive_gpt.py` we automate this recursion by writing a recursive function in Python that repeatedly calls the OpenAI API with the original and then subsequently generatated prompts until the result satisfies the base case. Here's the recursive Python function from [run_recursive_gpt.py](https://github.com/andyk/recursive_llm/blob/main/run_recursive_gpt.py`):
 
-Essentially:
 ```python
-response_text = recursive prompt
-while response_text.startswith("You are a recursive function"):
-    response_text = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=response_text,
-        …
-    )["choices"][0]["text"].strip()
-    print(response_text + "\n")
+def recursively_prompt_llm(prompt, n=1):
+    if prompt.startswith("You are a recursive function"):
+        prompt = openai.Completion.create(
+            model="text-davinci-003",
+            prompt=prompt,
+            temperature=0,
+            max_tokens=2048,
+        )["choices"][0]["text"].strip()
+        print(f"response #{n}: {prompt}\n")
+        recursively_prompt_llm(prompt, n + 1)
+
+recursively_prompt_llm(sys.stdin.readline()) 
 ```
 
 And here's what it looks like when you run it:
