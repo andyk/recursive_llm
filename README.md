@@ -45,7 +45,7 @@ My bigger picture goal here is to explore of using prompts to generate new promp
 
 This is partly inspired by the historical AI system from CMU called General Problem Solver (GPS). The way GPS works at a high level is the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take steps to bridge the gap. In particular, I learned about GPS via Patrick H. Winston's MIT [description of the project](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT.
 
-The ability for LLMs to break down problem into sub-steps (à la "Let's think step by step" a.k.a. Chain of thought (CoT) reasoning \[3\]) reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
+The ability for LLMs to break down problem into sub-steps via [Chain of thought (CoT) prompting](https://en.wikipedia.org/wiki/Chain-of-thought_prompting) \[3\]\[ reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
 
 I also want to further explore how (and when) to best leverage what the LLM has memorized. The way humans do math in our heads is an interesting analog: our brain (mind?) uses two types of rules that we have memorized:
 
@@ -54,7 +54,7 @@ I also want to further explore how (and when) to best leverage what the LLM has 
 
 So I'm wondering if we could write a "recursive" LLM prompt that achieves a similar thing.
 
-This direction of reasoning is inspired by another classic CMU AI research project called ACT-R \[5\]. This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
+This direction of reasoning is inspired by another classic CMU AI research project called [ACT-R](https://en.wikipedia.org/wiki/ACT-R). This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
 
 The ACT-R group partnered up with cognitive scientists & neuroscientists and performed FMRIs on students while they were doing math problems. 
 
@@ -92,8 +92,6 @@ To run without python (more manual process):
 \[3\] [Large Language Models are Zero-Shot Reasoners. Takeshi Kojima et al.](https://arxiv.org/abs/2205.11916)
 
 \[4\] [ACT-R project list of publications about Publications in Mathematical Problem Solving](http://act-r.psy.cmu.edu/category/problem-solving-and-decision-making/mathematical-problem-solving/)
-
-\[5\] [ACT-R Wikipedia page](https://en.wikipedia.org/wiki/ACT-R)
 
 ## Acknowledgments
 
