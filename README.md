@@ -54,7 +54,7 @@ I also want to further explore how (and when) to best leverage what the LLM has 
 
 So I'm wondering if we could write a "recursive" LLM prompt that achieves a similar thing.
 
-This direction of reasoning is inpsired by another classic CMU AI research project on Cognitive Architectures, John R. Anderson's group explored how humans do math in their head as part of his ACT-R project \[4\].
+This direction of reasoning is inpsired by another classic CMU AI research project called ACT-R \[5\]. This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
 
 The ACT-R group partnered up with cognitive scientists & neuroscientists and performed FMRIs on students while they were doing math problems. 
 
@@ -77,6 +77,8 @@ This reminds me a bit of how a CPU works, i.e., as a dumb loop that fetches and 
 \[3\] Large Language Models are Zero-Shot Reasoners - https://arxiv.org/abs/2205.11916 
 
 \[4\] https://www.amazon.com/Soar-Cognitive-Architecture-MIT-Press/dp/0262538539
+
+\[5\] https://en.wikipedia.org/wiki/ACT-R
 
 ## To run:
 
