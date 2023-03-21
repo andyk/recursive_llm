@@ -2,7 +2,7 @@
 
 The idea here is to implement recursion using English as the programming language and GPT as the runtime.
 
-Basically we come up with a GPT prompt which causes the model to return another slightly updated GPT prompt. 
+Basically we come up with a GPT prompt which causes the model to return another slightly updated GPT prompt. More specifically, the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal (i.e., a base case).
 
 It’s kind of like traditional recursion in code, but instead of having a function that calls itself with a different set of arguments, there is a prompt that returns itself with specific parts updated to reflect the new arguments.
 
@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/228998/226147800-fff1ba10-118c-47ae-97
 
 In theory, because this does not specify a base case, we could stay in this loop of copying and pasting and running these successive prompts forever, each prompt representing one number in the Fibonacci sequence.
 
-In `run_recursive_gpt.py` we automate this recursion by writing a minimal loop in Python and using the OpenAI API to call the model with the prompt, check if the result satisfies the base case, and if not call the model with the result that was returned (which should be the updated prompt).
+In `run_recursive_gpt.py` we automate this recursion by writing a recursive function in Python that repeatedly calls the OpenAI API with the original and then subsequently generatated prompts until the result satisfies the base case.
 
 Essentially:
 ```python
