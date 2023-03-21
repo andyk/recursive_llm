@@ -39,6 +39,27 @@ And here's what it looks like when you run it:
 https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a957-a810c23516aa.mp4
 
 
+## Big picture goal and related work
+
+My bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal.
+
+This is partly inspired by Patrick H. Winston's MIT OCW lecture on Cognitive Architectures, in particular [his summary](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) of the historical system from CMU called General Problem Solver (GPS) in which they try to identify a goal and then have the AI evaluate the difference between the current state and the goal and try take steps to bridge the gap.
+
+The ability for LLMs to break down problem into sub-steps (a la "Let's think step by step" \[3\]) reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
+
+I also want to further explore how (and when) to best leverage what the LLM has memorized.
+
+The way humans do math in our heads is an interesting analog: our brain (mind?) uses two types of rules that we have memorized:
+
+1. algebraic rules for rewriting (part of) the math problem
+2. atomic rules things like 2+2=4
+
+So I'm wondering if we could write a "recursive" LLM prompt that achieves a similar thing.
+
+This direction of reasoning is inpsired by another classic CMU AI research project on Cognitive Architectures, John R. Anderson's group explored how humans do math in their head as part of his ACT-R project \[4\].
+
+The ACT-R group partnered up with cognitive scientists & neuroscientists and performed FMRIs on students while they were doing math problems. 
+
 ## Observations
 
 I was a little suprised at how (and how frequently) the model generates incorrect results. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
@@ -52,6 +73,10 @@ This reminds me a bit of how a CPU works, i.e., as a dumb loop that fetches and 
 \[1\] A simple Python implementation of the ReAct pattern for LLMs. Simon Willison. https://til.simonwillison.net/llms/python-react-pattern
 
 \[2\] ReAct: Synergizing Reasoning and Acting in Language Models. Shunyu Yao et al. https://react-lm.github.io/ 
+
+\[3\] Large Language Models are Zero-Shot Reasoners - https://arxiv.org/abs/2205.11916 
+
+\[4\] https://www.amazon.com/Soar-Cognitive-Architecture-MIT-Press/dp/0262538539
 
 ## To run:
 
