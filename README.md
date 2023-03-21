@@ -54,7 +54,7 @@ I also want to further explore how (and when) to best leverage what the LLM has 
 
 So I'm wondering if we could write a "recursive" LLM prompt that achieves a similar thing.
 
-This direction of reasoning is inpsired by another classic CMU AI research project called ACT-R \[5\]. This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
+This direction of reasoning is inspired by another classic CMU AI research project called ACT-R \[5\]. This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
 
 The ACT-R group partnered up with cognitive scientists & neuroscientists and performed FMRIs on students while they were doing math problems. 
 
