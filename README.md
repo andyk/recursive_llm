@@ -58,13 +58,30 @@ This direction of reasoning is inspired by another classic CMU AI research proje
 
 The ACT-R group partnered up with cognitive scientists & neuroscientists and performed FMRIs on students while they were doing math problems. 
 
-## Observations
+
+## Observations & discussion
 
 I was a little suprised at how (and how frequently) the model generates incorrect results. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
 
 ![wrong-answer-18th-fib-seq](https://user-images.githubusercontent.com/228998/226428779-845c299c-c158-4634-94d8-cc265aa86f19.png)
 
 I wonder how much of this is because the model has memorized the Fibonacci sequence. It is possible to have it just return the sequence in a single call, but that isn't really the point here. Instead this is more an exploration of how to use these large language models as part of a more active agent system, in the spirit of \[1\]\[2\]. In this context our "agent" is just a dumb python tail recursion that uses the current prompt to generate the next prompt, etc. etc. until it arrives at a base case.
+
+
+## To run:
+
+    pip install openai
+    OPENAI_API_KEY=YOUR_KEY_HERE python run_recursive_gpt.py < prompt_fibonnaci_no_base_case.txt
+    OPENAI_API_KEY=YOUR_KEY_HERE python run_recursive_gpt.py < prompt_fibonnaci_base_case.txt
+    OPENAI_API_KEY=YOUR_KEY_HERE python run_recursive_gpt.py < prompt_counting.txt
+
+
+To run without python (more manual process):
+
+1. Open [OpenAI Playground](https://beta.openai.com/playground)
+2. Paste the prompt into the model (text-davinci-003", temperature=0, max_tokens=2048)
+3. Click Submit. The model output should be a new prompt.
+4. Keep running each successive prompt till the base case is hit.
 
 ## References
 
@@ -81,18 +98,3 @@ I wonder how much of this is because the model has memorized the Fibonacci seque
 ## Acknowledgments
 
 Thanks for [Andrew Krioukov](https://github.com/krioukov), [Nick Jalbert](https://github.com/nickjalbert/), [Beth Trushkowsky](https://www.cs.hmc.edu/~beth), and [Rob Carroll](https://www.linkedin.com/in/robert-carroll-97b71738/) for contributions and feedback!
-
-## To run:
-
-    pip install openai
-    OPENAI_API_KEY=YOUR_KEY_HERE python run_recursive_gpt.py < prompt_fibonnaci_no_base_case.txt
-    OPENAI_API_KEY=YOUR_KEY_HERE python run_recursive_gpt.py < prompt_fibonnaci_base_case.txt
-    OPENAI_API_KEY=YOUR_KEY_HERE python run_recursive_gpt.py < prompt_counting.txt
-
-
-To run without python (more manual process):
-
-1. Open [OpenAI Playground](https://beta.openai.com/playground)
-2. Paste the prompt into the model (text-davinci-003", temperature=0, max_tokens=2048)
-3. Click Submit. The model output should be a new prompt.
-4. Keep running each successive prompt till the base case is hit.
