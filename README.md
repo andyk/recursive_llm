@@ -78,6 +78,10 @@ I wonder how much of this is because the model has memorized the Fibonacci seque
 
 \[5\] [ACT-R Wikipedia page](https://en.wikipedia.org/wiki/ACT-R)
 
+## Acknowledgments
+
+Thanks for [Andrew Krioukov](https://github.com/krioukov), [Nick Jalbert](https://github.com/nickjalbert/), [Beth Trushkowsky](https://www.cs.hmc.edu/~beth), and [Rob Carroll](https://www.linkedin.com/in/robert-carroll-97b71738/) for contributions and feedback!
+
 ## To run:
 
     pip install openai
