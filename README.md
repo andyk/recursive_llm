@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/228998/226147800-fff1ba10-118c-47ae-97
 
 In theory, because this does not specify a base case, we could stay in this loop of copying and pasting and running these successive prompts forever, each prompt representing one number in the Fibonacci sequence.
 
-In `run_recursive_gpt.py` we automate this by writing a recursive Python function that repeatedly calls the OpenAI API with each successive prompt until the result satisfies the base case. Here's the recursive Python function from [run_recursive_gpt.py](https://github.com/andyk/recursive_llm/blob/main/run_recursive_gpt.py):
+In `run_recursive_gpt.py` we automate this by writing a recursive Python function that repeatedly calls the OpenAI API with each successive prompt until the result satisfies the base case. Here's the code from [run_recursive_gpt.py](https://github.com/andyk/recursive_llm/blob/main/run_recursive_gpt.py):
 
 ```python
 def recursively_prompt_llm(prompt, n=1):
