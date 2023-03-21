@@ -50,17 +50,23 @@ The ability for LLMs to break down problem into sub-steps via [Chain of thought 
 I also want to further explore how (and when) to best leverage what the LLM has memorized. The way humans do math in our heads is an interesting analog: our brains use two types of rules that we have memorized:
 
 1. algebraic rules for breaking the problem into sub-parts and deciding the order in which those need to be evaluated. E.g., `x+y*z = x+(y*z)`
-2. atomic rules. E.g., `2*3 = 6`
+2. atomic rules. E.g., `3*2 = 6`
 
 ...our brains use these rules to repeatedly substitue parts of the math problem until we arrive at an irreducible answer (e.g., a scalar).
 
-* `2+2*3` # the initial math statement
-* `2 + (2*3)` # use memorized rules of algebra to break the problem into two sub-problems
-* `2+6` # use memorized rule to replace `2*3` with `6`
+* `2+3*2` # the initial math statement
+* `2 + (3*2)` # use memorized rules of algebra to break the problem into two sub-problems
+* `2+6` # use memorized rule to replace `3*2` with `6`
 * `8` # use memorized rule to substitue `2+6` with `8`
 * Realize that we have reached an irreducible statement so stop
 
-With this in mind, I'm wondering if we could write a "recursive" LLM prompt that causes the model inference operation to use memorized rules (e.g., the model has almost certainly memorized that 2+2=4) to replace parts of the current prompt and return a new prompt 
+We know LLMs have memorized both types of rules:
+
+<img width="834" alt="image" src="https://user-images.githubusercontent.com/228998/226709256-95d95b22-2f05-4fcd-bb03-7da3eaf09de0.png">
+
+<img width="833" alt="image" src="https://user-images.githubusercontent.com/228998/226710490-fbadeef7-f1d9-45cd-b06d-56aa2d8bdff5.png">
+
+With this in mind, I'm wondering if we could write a "recursive" LLM prompt that utilizes these sort of rules that the model has memorized to take repeated steps towards a solution.
 
 This direction of reasoning is inspired by another classic CMU AI research project called [ACT-R](https://en.wikipedia.org/wiki/ACT-R). This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
 
