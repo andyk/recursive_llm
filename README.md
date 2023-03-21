@@ -43,7 +43,7 @@ https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a9
 
 My bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal.
 
-This is partly inspired by Patrick H. Winston's MIT OCW lecture on Cognitive Architectures, in particular [his summary](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) of the historical system from CMU called General Problem Solver (GPS) in which they try to identify a goal and then have the AI evaluate the difference between the current state and the goal and try take steps to bridge the gap.
+This is partly inspired by the historical AI system from CMU called General Problem Solver (GPS). The way GPS works at a high level is the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take steps to bridge the gap. In particular, I learned about GPS via Patrick H. Winston's MIT [description of the project](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT.
 
 The ability for LLMs to break down problem into sub-steps (a la "Let's think step by step" \[3\]) reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
 
