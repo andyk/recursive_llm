@@ -45,7 +45,7 @@ The bigger picture goal here is to explore of using prompts to generate new prom
 
 This is partly inspired by goal-conditioned Reinforcement Learning \[[5](https://www.youtube.com/watch?v=tzieElmtAjs&list=PLkFD6_40KJIwhWJpGazJ9VSj9CFMkb79A&t=1170s)\], and also the historical AI system from CMU called [General Problem Solver (GPS)](https://en.wikipedia.org/wiki/General_Problem_Solver), which is built on an idea called [means-ends analysis](https://en.wikipedia.org/wiki/Means%E2%80%93ends_analysis). Here is how it works at a high level: the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take a step to reduce the gap, then repeat. For a high-level summary of GPS, see [Patrick H. Winston's description of it](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT.
 
-The ability for LLMs to break down problem into sub-steps via [Chain of thought (CoT) prompting](https://en.wikipedia.org/wiki/Chain-of-thought_prompting) \[3\]\ reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
+The ability for LLMs to break down problem into sub-steps via [Chain of thought (CoT) prompting](https://en.wikipedia.org/wiki/Chain-of-thought_prompting) \[[3](https://arxiv.org/abs/2205.11916)\]\ reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
 
 I also want to further explore how (and when) to best leverage what the LLM has memorized. The way humans do math in our heads is an interesting analog: our brains use two types of rules that we have memorized:
 
@@ -68,7 +68,7 @@ We know LLMs have memorized both types of rules:
 
 With this in mind, I'm wondering if we could write a "recursive" LLM prompt that utilizes these sort of rules that the model has memorized to take repeated steps towards a solution.
 
-This direction of reasoning is inspired by another classic CMU AI research project called [ACT-R](https://en.wikipedia.org/wiki/ACT-R). This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
+This direction of reasoning is inspired by another classic CMU AI research project called [ACT-R](https://en.wikipedia.org/wiki/ACT-R). This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[[4](http://act-r.psy.cmu.edu/category/problem-solving-and-decision-making/mathematical-problem-solving/)\].
 
 The ACT-R group partnered up with cognitive scientists & neuroscientists and performed FMRIs on students while they were doing math problems. 
 
@@ -79,7 +79,7 @@ I was a little suprised at how (and how frequently) the model generates incorrec
 
 ![wrong-answer-18th-fib-seq](https://user-images.githubusercontent.com/228998/226428779-845c299c-c158-4634-94d8-cc265aa86f19.png)
 
-I wonder how much of this is because the model has memorized the Fibonacci sequence. It is possible to have it just return the sequence in a single call, but that isn't really the point here. Instead this is more an exploration of how to use these large language models as part of a more active agent system, in the spirit of \[1\]\[2\]. In this context our "agent" is just a dumb python tail recursion that uses the current prompt to generate the next prompt, etc. etc. until it arrives at a base case.
+I wonder how much of this is because the model has memorized the Fibonacci sequence. It is possible to have it just return the sequence in a single call, but that isn't really the point here. Instead this is more an exploration of how to use these large language models as part of a more active agent system, in the spirit of \[[1](https://til.simonwillison.net/llms/python-react-pattern)\]\[[2](https://react-lm.github.io/)\]. In this context our "agent" is just a dumb python tail recursion that uses the current prompt to generate the next prompt, etc. etc. until it arrives at a base case.
 
 
 ## To run:
