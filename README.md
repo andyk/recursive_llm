@@ -47,12 +47,20 @@ This is partly inspired by the historical AI system from CMU called [General Pro
 
 The ability for LLMs to break down problem into sub-steps via [Chain of thought (CoT) prompting](https://en.wikipedia.org/wiki/Chain-of-thought_prompting) \[3\]\ reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
 
-I also want to further explore how (and when) to best leverage what the LLM has memorized. The way humans do math in our heads is an interesting analog: our brain (mind?) uses two types of rules that we have memorized:
+I also want to further explore how (and when) to best leverage what the LLM has memorized. The way humans do math in our heads is an interesting analog: our brains use two types of rules that we have memorized:
 
 1. algebraic rules for rewriting (part of) the math problem
-2. atomic rules things like 2+2=4
+2. atomic rules, e.g.: `2*3 = 6`
 
-So I'm wondering if we could write a "recursive" LLM prompt that achieves a similar thing.
+...our brains use these rules to repeatedly substitue parts of the math problem until we arrive at an irreducible answer (e.g., a scalar).
+
+* 2+2*3 # the initial math problem
+* 2 + (2*3) # use memorized rules of algebra to break the problem into two sub-problems
+* 2+6 # use memorized rule to replace `2*3` with `6`
+* 8 # use memorized rule to substitue `2+6` with 8
+* note that we have reached an answer so stop
+
+With this in mind, I'm wondering if we could write a "recursive" LLM prompt that causes the model inference operation to use memorized rules (e.g., the model has almost certainly memorized that 2+2=4) to replace parts of the current prompt and return a new prompt 
 
 This direction of reasoning is inspired by another classic CMU AI research project called [ACT-R](https://en.wikipedia.org/wiki/ACT-R). This project, led by John R. Anderson, explored how humans do math in their head and tried to apply those lessons to their AI agent architecture \[4\].
 
