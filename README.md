@@ -43,6 +43,10 @@ https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a9
 
 The bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end-goal.
 
+This work is related to ReAct (a contraction of _**Re**_asoning + _**Act**_ion) \[[1](https://til.simonwillison.net/llms/python-react-pattern)\]\[[2](https://react-lm.github.io/)\], a "general paradigm" and associated implementation that "...explore[s] the use of LLMs to generate both reasoning traces and task-specific actions...".
+
+Also, the idea of recursive prompts was explored in detail in _Optimality is the tiger, and agents are its teeth_\[[6](https://www.lesswrong.com/posts/kpPnReyBC54KESiSn/optimality-is-the-tiger-and-agents-are-its-teeth)\] (thanks to [mitthrowaway2](https://news.ycombinator.com/user?id=mitthrowaway2) on Hackernews for the pointer).
+
 This is partly inspired by goal-conditioned Reinforcement Learning \[[5](https://www.youtube.com/watch?v=tzieElmtAjs&list=PLkFD6_40KJIwhWJpGazJ9VSj9CFMkb79A&t=1170s)\], and also the historical AI system from CMU called [General Problem Solver (GPS)](https://en.wikipedia.org/wiki/General_Problem_Solver), which is built on an idea called [means-ends analysis](https://en.wikipedia.org/wiki/Means%E2%80%93ends_analysis). Here is how it works at a high level: the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take a step to reduce the gap, then repeat. For a high-level summary of GPS, see [Patrick H. Winston's description of it](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT.
 
 The ability for LLMs to break down problem into sub-steps via [Chain of thought (CoT) prompting](https://en.wikipedia.org/wiki/Chain-of-thought_prompting) \[[3](https://arxiv.org/abs/2205.11916)\] reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
@@ -108,6 +112,8 @@ To run without python (more manual process):
 \[4\] [ACT-R project list of publications about Publications in Mathematical Problem Solving](http://act-r.psy.cmu.edu/category/problem-solving-and-decision-making/mathematical-problem-solving/)
 
 \[5\] [Lecture by Sergey Levine as part of UC Berkeley CS285 - graduate level Deep Reinforcement Learning](https://www.youtube.com/watch?v=tzieElmtAjs&t=1170s)
+
+\[6]\ [Optimality is the tiger, and agents are its teeth, by Veedrac](https://www.lesswrong.com/posts/kpPnReyBC54KESiSn/optimality-is-the-tiger-and-agents-are-its-teeth)
 
 ## Acknowledgments
 
