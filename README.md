@@ -47,9 +47,7 @@ This is partly inspired by Patrick H. Winston's MIT OCW lecture on Cognitive Arc
 
 The ability for LLMs to break down problem into sub-steps (a la "Let's think step by step" \[3\]) reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
 
-I also want to further explore how (and when) to best leverage what the LLM has memorized.
-
-The way humans do math in our heads is an interesting analog: our brain (mind?) uses two types of rules that we have memorized:
+I also want to further explore how (and when) to best leverage what the LLM has memorized. The way humans do math in our heads is an interesting analog: our brain (mind?) uses two types of rules that we have memorized:
 
 1. algebraic rules for rewriting (part of) the math problem
 2. atomic rules things like 2+2=4
