@@ -2,7 +2,7 @@
 
 The idea here is to implement recursion using English as the programming language and an LLM (e.g., GPT-3.5) as the runtime.
 
-Basically we come up with a GPT prompt which causes the model to return another slightly updated GPT prompt. More specifically, the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal (i.e., a base case).
+Basically we come up with an LLM prompt which causes the model to return another slightly updated GPT prompt. More specifically, the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal (i.e., a base case).
 
 It’s kind of like traditional recursion in code, but instead of having a function that calls itself with a different set of arguments, there is a prompt that returns itself with specific parts updated to reflect the new arguments.
 
