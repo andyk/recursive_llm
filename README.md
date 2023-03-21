@@ -45,7 +45,7 @@ My bigger picture goal here is to explore of using prompts to generate new promp
 
 This is partly inspired by the historical AI system from CMU called General Problem Solver (GPS). The way GPS works at a high level is the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take steps to bridge the gap. In particular, I learned about GPS via Patrick H. Winston's MIT [description of the project](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT.
 
-The ability for LLMs to break down problem into sub-steps (a la "Let's think step by step" a.k.a. Chain of thought (CoT) reasoning \[3\]) reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
+The ability for LLMs to break down problem into sub-steps (à la "Let's think step by step" a.k.a. Chain of thought (CoT) reasoning \[3\]) reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
 
 I also want to further explore how (and when) to best leverage what the LLM has memorized. The way humans do math in our heads is an interesting analog: our brain (mind?) uses two types of rules that we have memorized:
 
