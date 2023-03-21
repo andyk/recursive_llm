@@ -41,7 +41,7 @@ https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a9
 
 ## Big picture goal and related work
 
-My bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal.
+The bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal.
 
 This is partly inspired by the historical AI system from CMU called [General Problem Solver (GPS)](https://en.wikipedia.org/wiki/General_Problem_Solver), which is built on an idea called [means-ends analysis](https://en.wikipedia.org/wiki/Means%E2%80%93ends_analysis). Here is how it works at a high level: the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take steps to bridge the gap. In particular, I learned about GPS via Patrick H. Winston's MIT [description of the project](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT.
 
