@@ -43,7 +43,7 @@ https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a9
 
 The bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal.
 
-This is partly inspired by the historical AI system from CMU called [General Problem Solver (GPS)](https://en.wikipedia.org/wiki/General_Problem_Solver), which is built on an idea called [means-ends analysis](https://en.wikipedia.org/wiki/Means%E2%80%93ends_analysis). Here is how it works at a high level: the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take steps to bridge the gap. In particular, I learned about GPS via Patrick H. Winston's MIT [description of the project](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT.
+This is partly inspired by the historical AI system from CMU called [General Problem Solver (GPS)](https://en.wikipedia.org/wiki/General_Problem_Solver), which is built on an idea called [means-ends analysis](https://en.wikipedia.org/wiki/Means%E2%80%93ends_analysis). Here is how it works at a high level: the user specifies a goal, and then GPS evaluates the difference between current state of the world and the goal state and then tries take a step to reduce the gap, then repeat. In particular, I learned about GPS via Patrick H. Winston's MIT [description of the project](https://www.youtube.com/watch?v=PimSbFGrwXM&t=189s) in his OCW lecture on Cognitive Architectures as part of his AI course at MIT. We also see very similar ideas at work in goal-conditioned RL \[[6](https://www.youtube.com/watch?v=tzieElmtAjs&list=PLkFD6_40KJIwhWJpGazJ9VSj9CFMkb79A&t=1170s)\].
 
 The ability for LLMs to break down problem into sub-steps via [Chain of thought (CoT) prompting](https://en.wikipedia.org/wiki/Chain-of-thought_prompting) \[3\]\ reminded me of this part of Winston's lecture. And so I wanted to try making a prompt that (1) contains state and (2) can be used to generate another prompt which has updated state.
 
@@ -92,6 +92,8 @@ To run without python (more manual process):
 \[3\] [Large Language Models are Zero-Shot Reasoners. Takeshi Kojima et al.](https://arxiv.org/abs/2205.11916)
 
 \[4\] [ACT-R project list of publications about Publications in Mathematical Problem Solving](http://act-r.psy.cmu.edu/category/problem-solving-and-decision-making/mathematical-problem-solving/)
+
+\[5\] [Lecture by Sergey Levine as part of UC Berkeley CS285 - graduate level Deep Reinforcement Learning](https://www.youtube.com/watch?v=tzieElmtAjs&t=1170s)
 
 ## Acknowledgments
 
