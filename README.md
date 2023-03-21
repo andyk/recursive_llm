@@ -113,7 +113,7 @@ To run without python (more manual process):
 
 \[5\] [Lecture by Sergey Levine as part of UC Berkeley CS285 - graduate level Deep Reinforcement Learning](https://www.youtube.com/watch?v=tzieElmtAjs&t=1170s)
 
-\[6]\ [Optimality is the tiger, and agents are its teeth, by Veedrac](https://www.lesswrong.com/posts/kpPnReyBC54KESiSn/optimality-is-the-tiger-and-agents-are-its-teeth)
+\[6\] [Optimality is the tiger, and agents are its teeth, by Veedrac, lesswrong.com](https://www.lesswrong.com/posts/kpPnReyBC54KESiSn/optimality-is-the-tiger-and-agents-are-its-teeth)
 
 ## Acknowledgments
 
