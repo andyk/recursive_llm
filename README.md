@@ -68,15 +68,15 @@ I wonder how much of this is because the model has memorized the Fibonacci seque
 
 ## References
 
-\[1\] A simple Python implementation of the ReAct pattern for LLMs. Simon Willison. https://til.simonwillison.net/llms/python-react-pattern
+\[1\] [A simple Python implementation of the ReAct pattern for LLMs. Simon Willison.](https://til.simonwillison.net/llms/python-react-pattern)
 
-\[2\] ReAct: Synergizing Reasoning and Acting in Language Models. Shunyu Yao et al. https://react-lm.github.io/ 
+\[2\] [ReAct: Synergizing Reasoning and Acting in Language Models. Shunyu Yao et al.](https://react-lm.github.io/)
 
-\[3\] Large Language Models are Zero-Shot Reasoners - https://arxiv.org/abs/2205.11916 
+\[3\] [Large Language Models are Zero-Shot Reasoners. Takeshi Kojima et al.](https://arxiv.org/abs/2205.11916)
 
-\[4\] https://www.amazon.com/Soar-Cognitive-Architecture-MIT-Press/dp/0262538539
+\[4\] [ACT-R project list of publications about Publications in Mathematical Problem Solving](http://act-r.psy.cmu.edu/category/problem-solving-and-decision-making/mathematical-problem-solving/)
 
-\[5\] https://en.wikipedia.org/wiki/ACT-R
+\[5\] [ACT-R Wikipedia page](https://en.wikipedia.org/wiki/ACT-R)
 
 ## To run:
 
