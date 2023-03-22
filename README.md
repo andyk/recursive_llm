@@ -1,6 +1,6 @@
 # Recursive LLM prompts
 
-The idea here is to implement recursion using English as the programming language and an LLM (e.g., GPT-2.5) as the runtime.
+The idea here is to implement recursion using English as the programming language and an LLM (e.g., GPT-3.5) as the runtime.
 
 Basically we come up with an LLM prompt which causes the model to return another slightly updated prompt. More specifically, the prompts contain state and each recursively generated prompt updates that state to be closer to an end goal (i.e., a base case).
 
