@@ -76,7 +76,7 @@ Finally, the idea of recursive prompts was explored in detail in _Optimality is 
 
 ## Observations & discussion
 
-I was a little suprised at how (and how frequently) the model generates incorrect results. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
+I was a little suprised at how frequently the model generates incorrect results. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
 
 ![wrong-answer-18th-fib-seq](https://user-images.githubusercontent.com/228998/226428779-845c299c-c158-4634-94d8-cc265aa86f19.png)
 
