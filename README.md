@@ -41,7 +41,7 @@ https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a9
 
 ## Big picture goal and related work
 
-The bigger picture goal here is to explore of using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end-goal.
+The bigger picture goal here is to explore using prompts to generate new prompts, and more specifically the case where the prompts contain state and each recursively generated prompt updates that state to be closer to an end-goal.
 
 This work is related to ReAct (a contraction of **Re**asoning + **Act**ion) \[[1](https://til.simonwillison.net/llms/python-react-pattern)\]\[[2](https://react-lm.github.io/)\], a "general paradigm" and associated implementation that "...explore[s] the use of LLMs to generate both reasoning traces and task-specific actions...".
 
