@@ -121,7 +121,7 @@ Here is an example of such a prompt that attempts to recursively compute `factor
 
 You can see the prompt successfully "pushed state" on to the stack. This particular prompt doesn't yet work after it hits the base case and is supposed to switch modes and pop the stack until it gets to its final value.
 
-Also note that we switched from Fibonacci (which is non-linear when implemented using nontrivial non-tail recursion) to Factorial which is linearly recursive (i.e., only calls itself once). I'm still working on getting this working.
+Also note that we switched from Fibonacci (which is non-linear when implemented using nontrivial non-tail recursion) to Factorial which is linearly recursive (i.e., only calls itself once). I'm still trying to get this working.
 
 ## To run:
 
