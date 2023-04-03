@@ -154,4 +154,4 @@ To run without python (more manual process):
 
 ## Acknowledgments
 
-Thanks for [Andrew Krioukov](https://github.com/krioukov), [Nick Jalbert](https://github.com/nickjalbert/), [Beth Trushkowsky](https://www.cs.hmc.edu/~beth), and [Rob Carroll](https://www.linkedin.com/in/robert-carroll-97b71738/), and [the Hackernews community](https://news.ycombinator.com/item?id=35234276) for contributions and feedback! 
+Thanks for [Andrew Krioukov](https://github.com/krioukov), Bill Bultman, [Nick Jalbert](https://github.com/nickjalbert/), [Beth Trushkowsky](https://www.cs.hmc.edu/~beth), and [Rob Carroll](https://www.linkedin.com/in/robert-carroll-97b71738/), and [the Hackernews community](https://news.ycombinator.com/item?id=35234276) for contributions and feedback! 
