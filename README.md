@@ -56,11 +56,11 @@ The way humans do math in our heads is an interesting analog. Our brains use two
 
 Our brains use these rules to repeatedly substitue parts of the math problem until we arrive at an irreducible answer (e.g., a scalar).
 
-* `2+3*2` # the initial math statement
-* `2 + (3*2)` # use memorized rules of algebra to break the problem into two sub-problems
-* `2+6` # use memorized rule to replace `3*2` with `6`
-* `8` # use memorized rule to substitue `2+6` with `8`
-* Realize that we have reached an irreducible statement so stop
+* `2+3*2  # the initial math statement`
+* `2 + (3*2)  # use memorized rules of algebra to break the problem into two sub-problems`
+* `2+6  # use memorized rule to replace 3*2 with 6`
+* `8  # use memorized rule to substitue 2+6 with 8`
+* `Realize that we have reached an irreducible statement so stop`
 
 We know LLMs have memorized both types of rules:
 
