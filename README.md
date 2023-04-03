@@ -78,7 +78,7 @@ In the case of our original recursive Fibonacci LLM prompt above, this part...
 
 ## Open problem: handling when the model is wrong
 
-One of open challenges in using this technique for reliably correct reasoning is dealing with when the model has incorrectly memorized facts, which happens frequently. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
+An open challenge in using facts memorized by the model for correct reasoning is that LLMs frequently generate incorrect facts. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
 
 ![wrong-answer-18th-fib-seq](https://user-images.githubusercontent.com/228998/226428779-845c299c-c158-4634-94d8-cc265aa86f19.png)
 
