@@ -38,6 +38,9 @@ And here's what it looks like when you run it:
 
 https://user-images.githubusercontent.com/228998/226147804-948151a5-f534-4e20-a957-a810c23516aa.mp4
 
+Note that there are two types of recursion at play here:
+* First, a recursive prompt (i.e., a blob of text) that, when passed to an LLM like GPT3.5, causes some more text to be generated that itself, when passed to an LLM like GPT3.5, causes some more text to be generated, etc. etc.
+* Second, a recursive Python function that first calls the model with the prompt, and then calls itself with whatever the model returned.
 
 ## Big picture goal and related work
 
