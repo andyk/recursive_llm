@@ -90,9 +90,9 @@ This seems to be happening because the model has (1) memorized the Fibonacci seq
 
 ...and then comparing what it produces with a the actual sequence (as generate by code):
 
-<img width="631" alt="image" src="https://user-images.githubusercontent.com/228998/229579723-f7a3ef4b-a26f-4046-bdcf-d091d127042d.png">
+<img width="651" alt="image" src="https://user-images.githubusercontent.com/228998/229579998-953166e7-8974-4669-903b-e2ab8517ef72.png">
 
-<img width="513" alt="image" src="https://user-images.githubusercontent.com/228998/229581327-c8b5db7a-24d2-43ab-a9cb-8758af9b2de2.png">
+<img width="513" alt="image" src="https://user-images.githubusercontent.com/228998/229581845-d11c0340-a579-47b8-a25b-0e206616bbdd.png">
 
 
 ## Beyond Tail-recursion
