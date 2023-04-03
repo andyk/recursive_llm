@@ -68,7 +68,7 @@ We know LLMs have memorized both types of rules:
 
 <img width="833" alt="image" src="https://user-images.githubusercontent.com/228998/226710490-fbadeef7-f1d9-45cd-b06d-56aa2d8bdff5.png">
 
-Building off of this, we can try to write "recursive" LLM prompts that utilizes facts/rules that the model has memorized to take repeated steps towards a solution.
+Building off of this, we can write "recursive" LLM prompts that utilize facts/rules the model has memorized to take repeated steps towards a solution.
 
 In the case of our original recursive Fibonacci LLM prompt above, this part...
 
