@@ -109,9 +109,9 @@ Finally, the idea of recursive prompts was explored in detail in _Optimality is 
 
 ## Beyond Tail-recursion
 
-In this article, I consider a prompt that generates a new prompt to be recursive [by a general definition](https://en.wikipedia.org/wiki/Recursion_(disambiguation)) of recursion: "the process of repeating items in a self-similar way". The examples considered above are analagous to linear tail recursion, which is essentially iteration implemented via a self-referencing abstraction. Most often, in computer science, the abstraction is a function that calls itself. In this case it is a prompt that generates another prompt.
+The examples of recursive LLM prompts considered above are analagous to linear tail recursion, which is essentially iteration implemented via a self-referencing abstraction. In computer science, the abstraction is often implemented in the form of a function that calls itself. In our work here, we are working with a prompt that generates another prompt.
 
-I find it even more interesting to explore non-tail recursion. In this case, the the abstraction (e.g., function) performs some transformation of the value returned by its inner call to itself before returning it to it own output to its caller.
+It is even more interesting to explore non-tail recursion, where the abstraction (e.g., the function) performs some transformation of the value returned by its inner call to itself before returning that value to its caller (the next-outer most instance of itself).
 
 To actually compute a simplified value of a non-tail recursive function, a computer system uses a [memory stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)). In the context of a non-tail recursive prompt, we could try to include the stack as part of the prompt itself.
 
