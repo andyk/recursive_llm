@@ -84,7 +84,15 @@ I was a little suprised at how frequently the model generates incorrect results.
 
 ![wrong-answer-18th-fib-seq](https://user-images.githubusercontent.com/228998/226428779-845c299c-c158-4634-94d8-cc265aa86f19.png)
 
-I wonder how much of this is because the model has memorized the Fibonacci sequence. It is possible to have it just return the sequence in a single call, but that isn't really the point here. Instead this is more an exploration of how to use these large language models as part of a more active agent system, in the spirit of \[[1](https://til.simonwillison.net/llms/python-react-pattern)\]\[[2](https://react-lm.github.io/)\]. In this context our "agent" is just a dumb python tail recursion that uses the current prompt to generate the next prompt, etc. etc. until it arrives at a base case.
+This seems to be happening because the model has (1) memorized the Fibonacci sequence, and (2) doesn't always get it right. We can verify both of these facts by asking the model to return the Fibonacci sequence in a single call...
+
+<img width="679" alt="image" src="https://user-images.githubusercontent.com/228998/229580556-62552cca-4743-49d5-8f6d-5fa62126dd67.png">
+
+...and then comparing what it produces with a the actual sequence (as generate by code):
+
+<img width="651" alt="image" src="https://user-images.githubusercontent.com/228998/229579998-953166e7-8974-4669-903b-e2ab8517ef72.png">
+
+<img width="631" alt="image" src="https://user-images.githubusercontent.com/228998/229579723-f7a3ef4b-a26f-4046-bdcf-d091d127042d.png">
 
 
 ## Beyond Tail-recursion
