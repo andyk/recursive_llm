@@ -6,7 +6,7 @@ Basically we come up with an LLM prompt which causes the model to return another
 
 It’s kind of like recursion in code, but instead of having a function that calls itself with a different set of arguments, there is a prompt that returns itself with specific parts updated to reflect the new arguments.
 
-Here is an infinitely recursive fibonacci prompt:
+For simplicity, let's start without a base case; here is an infinitely recursive fibonacci prompt:
 
 > You are a recursive function. Instead of being written in a programming language, you are written in English.  You have variables FIB_INDEX = 2, MINUS_TWO = 0, MINUS_ONE = 1, CURR_VALUE = 1. Output this paragraph but with updated variables to compute the next step of the Fibbonaci sequence.
 
