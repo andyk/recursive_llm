@@ -92,7 +92,7 @@ This seems to be happening because the model has (1) memorized the Fibonacci seq
 
 <img width="513" alt="image" src="https://user-images.githubusercontent.com/228998/229581845-d11c0340-a579-47b8-a25b-0e206616bbdd.png">
 
-One way of handling this is to use more reliable means of looking up facts/knowledge, such as searching Wikipedia, having the model generate and run code, etc. If you're curious about work on this, check out my [list of work on enabling LLMs to do things](https://andykonwinski.com/2023/03/30/list-of-autonomous-agent-work.html).
+One way of handling this is to use more reliable means of looking up facts/knowledge, such as searching Wikipedia, having the model generate and run code, etc. This is an active area of research. If you're curious about it, check out my [list of work on enabling LLMs to do things](https://andykonwinski.com/2023/03/30/list-of-autonomous-agent-work.html).
 
 Another idea being explored is having the model fact-check itself. One way to do this is using the model to rephrase the prompt into multiple fact look-ups prompts and then executing all of them and using some voting scheme to decide on an answer with more confidence. This is a technique that has been thoroughly explored in the field of Human Computation research.
 
