@@ -14,7 +14,6 @@ To “run this program” we can paste it into OpenAI playground, and click run,
 
 https://user-images.githubusercontent.com/228998/226147800-fff1ba10-118c-47ae-9772-35be5b15e4c0.mp4
 
-
 In theory, because this does not specify a base case, we could stay in this loop of copying and pasting and running these successive prompts forever, each prompt representing one number in the Fibonacci sequence.
 
 In `run_recursive_gpt.py` we automate this by writing a recursive Python function that repeatedly calls the OpenAI API with each successive prompt until the result satisfies the base case. Here's the code from [run_recursive_gpt.py](https://github.com/andyk/recursive_llm/blob/main/run_recursive_gpt.py):
@@ -67,13 +66,21 @@ We know LLMs have memorized both types of rules:
 
 <img width="833" alt="image" src="https://user-images.githubusercontent.com/228998/226710490-fbadeef7-f1d9-45cd-b06d-56aa2d8bdff5.png">
 
-With this in mind, I'm wondering if we could write a "recursive" LLM prompt that utilizes these sort of rules that the model has memorized to take repeated steps towards a solution.
+Building off of this, we can try to write "recursive" LLM prompts that utilizes facts/rules that the model has memorized to take repeated steps towards a solution.
+
+In the case of our original recursive Fibonacci LLM prompt above, this part...
+
+> Output this paragraph but with updated variables to compute the next step of the Fibbonaci sequence.
+
+... utilizes the fact that the model has memorized the Fibonacci sequence itself. However, the model isn't always right!
+
+## Open problem: handling when the model is wrong
 
 One of open challenges in using this technique for reliably correct reasoning is dealing with when the model has incorrectly memorized facts, which happens frequently. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
 
 ![wrong-answer-18th-fib-seq](https://user-images.githubusercontent.com/228998/226428779-845c299c-c158-4634-94d8-cc265aa86f19.png)
 
-Digging into this a littlbe, it seems to be happening because the model has (1) memorized the Fibonacci sequence, and (2) doesn't always get it right. We can verify both of these facts by asking the model to return the Fibonacci sequence in a single call...
+This seems to be happening because the model has (1) memorized the Fibonacci sequence, and (2) doesn't always get it right. We can verify both of these facts by asking the model to return the Fibonacci sequence in a single call...
 
 <img width="679" alt="image" src="https://user-images.githubusercontent.com/228998/229580556-62552cca-4743-49d5-8f6d-5fa62126dd67.png">
 
