@@ -74,6 +74,7 @@ There are also similarities between this work and ReAct (a contraction of **Re**
 
 Finally, the idea of recursive prompts was explored in detail in _Optimality is the tiger, and agents are its teeth_\[[6](https://www.lesswrong.com/posts/kpPnReyBC54KESiSn/optimality-is-the-tiger-and-agents-are-its-teeth)\] (thanks to [mitthrowaway2](https://news.ycombinator.com/user?id=mitthrowaway2) on Hackernews for the pointer).
 
+
 ## Observations & discussion
 
 I was a little suprised at how frequently the model generates incorrect results. E.g., with the Fibonacci sequence prompt, sometimes it skips a number entirely, sometimes it produces a number that is off-by-some but then gets the following number(s) correct. For example, at the very end of the screen capture video above (i.e., "response #16") it prints 2504 but the correct answer is 2584.
@@ -82,6 +83,22 @@ I was a little suprised at how frequently the model generates incorrect results.
 
 I wonder how much of this is because the model has memorized the Fibonacci sequence. It is possible to have it just return the sequence in a single call, but that isn't really the point here. Instead this is more an exploration of how to use these large language models as part of a more active agent system, in the spirit of \[[1](https://til.simonwillison.net/llms/python-react-pattern)\]\[[2](https://react-lm.github.io/)\]. In this context our "agent" is just a dumb python tail recursion that uses the current prompt to generate the next prompt, etc. etc. until it arrives at a base case.
 
+
+## Beyond Tail-recursion
+
+In this article, I consider a prompt that generates a new prompt to be recursive [by a general definition](https://en.wikipedia.org/wiki/Recursion_(disambiguation)) of recursion: "the process of repeating items in a self-similar way". The examples considered above are analagous to linear tail recursion, which is essentially iteration implemented via a self-referencing abstraction. Most often, in computer science, the abstraction is a function that calls itself. In this case it is a prompt that generates another prompt.
+
+I find it even more interesting to explore non-tail recursion. In this case, the the abstraction (e.g., function) performs some transformation of the value returned by its inner call to itself before returning it to it own output to its caller.
+
+To actually compute a simplified value of a non-tail recursive function, a computer system uses a [memory stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)). In the context of a non-tail recursive prompt, we could try to include the stack as part of the prompt itself.
+
+Here is an example of such a prompt that attempts to recursively compute `factorial(11)`:
+
+<img width="1166" alt="image" src="https://user-images.githubusercontent.com/228998/229570729-a85900b8-8248-4e58-ae22-225d205e277e.png">
+
+You can see the prompt successfully "pushed state" on to the stack. This particular prompt doesn't yet work after it hits the base case and is supposed to switch modes and pop the stack until it gets to its final value.
+
+Also note that we switched from Fibonacci (which is non-linear when implemented using nontrivial non-tail recursion) to Factorial which is linearly recursive (i.e., only calls itself once). I'm still working on getting this working.
 
 ## To run:
 
